@@ -14,6 +14,11 @@ public class LibroServiceImpl implements LibroService {
     
     @Autowired
     private LibroRepository repository;
+
+    @Override
+    public List<Libro> listaPorCategorias(List<String> categories) {
+        return repository.listaPorCategorias(categories);
+    }
     
     @Override
     public List<Libro> listaPorAutores(List<String> authors) {
@@ -39,6 +44,8 @@ public class LibroServiceImpl implements LibroService {
     public List<Libro> listaPorTitulo(String titulo) {
         return repository.findByTitle(titulo);
     }
+
+
 
     
 }

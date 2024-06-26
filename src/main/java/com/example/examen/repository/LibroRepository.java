@@ -14,6 +14,9 @@ public interface LibroRepository extends MongoRepository<Libro, ObjectId> {
     @Query("{ 'authors' : { $in: ?0 } }")
     public abstract List<Libro> listaPorAutores(List<String> authors);
 
+    @Query("{ 'categories' : { $in: ?0 } }")
+    public abstract List<Libro> listaPorCategorias(List<String> categories);
+
     public abstract List<Libro> findByTitle(String title);
     
 }
